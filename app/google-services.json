@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "771408718149",
+    "project_id": "gitalquiler-41889",
+    "storage_bucket": "gitalquiler-41889.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:771408718149:android:7d4cea9fb9a0daafc1f62c",
+        "android_client_info": {
+          "package_name": "choquepata.puma.gitalquiler"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXIt3tWPLgKQCgdnWzvO5rOs9ZVo-Tat0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

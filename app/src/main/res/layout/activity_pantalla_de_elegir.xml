@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LAYOUT.pantalla_de_elegir"
+    >
+
+    <TextView
+        android:id="@+id/textDueño"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿eres el dueño?"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintVertical_bias="0.05"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/btnDueño"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:text="   PRESIONE AQUI  "
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:background="@drawable/boton_fondo"
+        android:gravity="center"
+        android:textAlignment="center"
+        app:layout_constraintVertical_bias="0.05"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textDueño" />
+
+    <TextView
+        android:id="@+id/textInquilino"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ó ¿eres el Inquilino?"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintVertical_bias="0.2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnDueño" />
+
+    <TextView
+        android:id="@+id/btnInquilino"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:background="@drawable/boton_fondo"
+        android:gravity="center"
+        android:text="   PRESIONE AQUI  "
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintVertical_bias="0.05"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInquilino" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
