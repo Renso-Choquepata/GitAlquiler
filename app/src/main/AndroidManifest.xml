@@ -12,20 +12,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GitAlquiler"
         tools:targetApi="31">
+
         <activity
-            android:name=".identificador.pantalla_de_registrod"
+            android:name=".identificador.registrar_propietario"
             android:exported="false" />
         <activity
-            android:name=".identificador.pantalla_de_login"
+            android:name=".identificador.loginPropietario"
             android:exported="false" />
         <activity
-            android:name=".LAYOUT.pantalla_de_elegir"
+            android:name=".identificador.pantalla_de_elegirud"
             android:exported="false" />
         <activity
-            android:name=".LAYOUT.pantalla_de_bienvenido"
+            android:name=".LAYOUT.pantalla_de_Bienvenidow"
             android:exported="false" />
         <activity
-            android:name=".LAYOUT.Pantalla_de_inicio"
+            android:name=".LAYOUT.pantalla_de_inicio"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -4,4 +4,12 @@
     <color name="white">#FFFFFFFF</color>
     <color name="azulado">#13098C</color>
     <color name="azulmorado">#2F287B</color>
+    <color name="morado_200">#FFBB86FC</color>
+    <color name="morado_500">#FF6200EE</color>
+    <color name="morado_700">#FF3700B3</color>
+    <color name="verdeazulado_200">#FF03DAC5</color>
+    <color name="verdeazulado_700">#FF018786</color>
+    <color name="morado">#6917E5</color>
+    <color name="azul">#1728E5</color>
+    <color name="grey">#EFF0FC</color>
 </resources>
