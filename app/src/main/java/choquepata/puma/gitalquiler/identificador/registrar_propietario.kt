@@ -15,6 +15,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import choquepata.puma.gitalquiler.propietarios.pantalla_principal
+import kotlin.random.Random
 
 class registrar_propietario : AppCompatActivity() {
 
@@ -30,6 +32,7 @@ class registrar_propietario : AppCompatActivity() {
     private var password: String = ""
     private var nombres: String = ""
     private var telefono: String = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -38,9 +41,8 @@ class registrar_propietario : AppCompatActivity() {
         mEditTextGmail = findViewById(R.id.editTextIngresarGmail)
         mEdittextPassword = findViewById(R.id.editTextIngresarPassword)
         mEditTextNombre = findViewById(R.id.editTextIngresarNombres)
-        mEditTexttelefono= findViewById(R.id.editTextIngresarTelefono)
+        mEditTexttelefono = findViewById(R.id.editTextIngresarTelefono)
         mBtnRegistrar = findViewById(R.id.buttonRegistrar)
-
 
         mAuth = FirebaseAuth.getInstance()
         mDatabase = FirebaseDatabase.getInstance().reference
@@ -48,8 +50,8 @@ class registrar_propietario : AppCompatActivity() {
         mBtnRegistrar.setOnClickListener {
             email = mEditTextGmail.text.toString()
             password = mEdittextPassword.text.toString()
-            nombres= mEditTextNombre.text.toString()
-            telefono= mEditTexttelefono.text.toString()
+            nombres = mEditTextNombre.text.toString()
+            telefono = mEditTexttelefono.text.toString()
 
             if (email.isNotEmpty() && password.isNotEmpty() && nombres.isNotEmpty() && telefono.isNotEmpty()) {
                 registrarUsuario()
@@ -64,7 +66,6 @@ class registrar_propietario : AppCompatActivity() {
             startActivity(intentNextActivity)
             overridePendingTransition(R.anim.entrada_izquierda, R.anim.salida_derecha)
         }
-
     }
 
     private fun registrarUsuario() {
@@ -73,6 +74,9 @@ class registrar_propietario : AppCompatActivity() {
                 if (task.isSuccessful) {
                     val user = mAuth.currentUser
                     user?.let {
+                        // Generar un ID aleatorio de 6 dígitos
+                        val propietarioId = Random.nextInt(100000, 999999).toString()
+
                         // Actualizar el perfil del usuario
                         val profileUpdates = UserProfileChangeRequest.Builder()
                             .setDisplayName("$nombres $telefono")
@@ -86,14 +90,15 @@ class registrar_propietario : AppCompatActivity() {
                                     map["email"] = email
                                     map["nombres"] = nombres
                                     map["Telefono"] = telefono
-                                    map["contraseña"] =password
+                                    map["contraseña"] = password
+                                    map["propietarioId"] = propietarioId
 
                                     val id = user.uid
                                     mDatabase.child("Dueños").child(id).setValue(map)
                                         .addOnCompleteListener { task2 ->
                                             if (task2.isSuccessful) {
                                                 Toast.makeText(this, "Registro exitoso", Toast.LENGTH_SHORT).show()
-                                                val intent = Intent(this, loginPropietario::class.java)
+                                                val intent = Intent(this, pantalla_principal::class.java)
                                                 startActivity(intent)
                                                 finish()
                                             } else {
@@ -110,6 +115,5 @@ class registrar_propietario : AppCompatActivity() {
                 }
             }
     }
-
 
 }

@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import choquepata.puma.gitalquiler.R
+import choquepata.puma.gitalquiler.inquilinos.loginInq
 
 class pantalla_de_elegirud : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,6 +18,12 @@ class pantalla_de_elegirud : AppCompatActivity() {
         val btnElegir= findViewById<TextView>(R.id.Textpropietario)
         btnElegir.setOnClickListener(){
             val intentNextActivity = Intent(this, loginPropietario::class.java)
+            startActivity(intentNextActivity)
+        }
+
+        val TextInquilino= findViewById<TextView>(R.id.textInquilino)
+        TextInquilino.setOnClickListener(){
+            val intentNextActivity = Intent(this, loginInq::class.java)
             startActivity(intentNextActivity)
         }
     }

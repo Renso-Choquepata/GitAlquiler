@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.utils.IMPLEMENTATION
+
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
@@ -5,6 +7,9 @@ plugins {
     //agregados por el desarrollador
     id("com.google.gms.google-services")
 }
+
+
+
 
 android {
     namespace = "choquepata.puma.gitalquiler"
@@ -40,8 +45,10 @@ android {
         viewBinding = true
     }
 }
-
 dependencies {
+
+    implementation(libs.firebase.database.ktx)
+    val fragment_version = "1.8.2"
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -58,5 +65,13 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:33.1.2"))
     //implementation 'com.firebaseui:firebase-ui-auth:7.2.0'
     implementation("com.google.firebase:firebase-auth-ktx")
-    implementation("com.google.firebase:firebase-database-ktx")
+    implementation(libs.picasso)
+    implementation("androidx.fragment:fragment-ktx:$fragment_version")
+    implementation("com.squareup.retrofit2:retrofit:2.11.0")
+    implementation ("com.squareup.retrofit2:converter-moshi:2.11.0")
+    implementation("com.google.firebase:firebase-storage")
+    implementation("androidx.fragment:fragment-ktx:$1.8.2")
+
+
+    //implementation(platform("com.google.firebase:firebase-bom:32.7.1"))
 }

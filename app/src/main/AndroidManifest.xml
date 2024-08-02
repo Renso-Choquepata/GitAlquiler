@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
+    <uses-feature android:name="android.hardware.camera.any" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,6 +17,24 @@
         android:theme="@style/Theme.GitAlquiler"
         tools:targetApi="31">
 
+
+
+
+        <activity
+            android:name=".inquilinos.pnatalla_principal_inq"
+            android:exported="false" />
+        <activity
+            android:name=".inquilinos.lista_inquilinos"
+            android:exported="false" />
+        <activity
+            android:name=".inquilinos.registrarInq"
+            android:exported="false" />
+        <activity
+            android:name=".inquilinos.loginInq"
+            android:exported="false" />
+        <activity
+            android:name=".propietarios.pantalla_principal"
+            android:exported="false" />
         <activity
             android:name=".identificador.registrar_propietario"
             android:exported="false" />

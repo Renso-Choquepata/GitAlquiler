@@ -91,7 +91,7 @@
         app:layout_constraintTop_toBottomOf="@+id/Textpropietario" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/textInquilino"
         android:layout_width="0dp"
         android:layout_height="40sp"
         android:layout_marginStart="64dp"
